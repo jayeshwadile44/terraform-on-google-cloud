@@ -6,9 +6,9 @@ resource "google_compute_firewall" "fw_ssh" {
     protocol = "tcp"
   }
   direction     = "INGRESS"
-  network       = google_compute_network.myvpc.id
+  network       = google_compute_network.myvpc.id 
   priority      = 1000
-  source_ranges = ["0.0.0.0/0"] #from entire internet it can be accessible
+  source_ranges = ["0.0.0.0/0"]
   target_tags   = ["ssh-tag"]
 }
 
@@ -16,12 +16,12 @@ resource "google_compute_firewall" "fw_ssh" {
 resource "google_compute_firewall" "fw_http" {
   name = "fwrule-allow-http80"
   allow {
-    ports    = ["80", "8080"]
+    ports    = ["80"]
     protocol = "tcp"
   }
   direction     = "INGRESS"
-  network       = google_compute_network.myvpc.id
+  network       = google_compute_network.myvpc.id 
   priority      = 1000
-  source_ranges = ["0.0.0.0/0"] #from entire internet it can be accessible
+  source_ranges = ["0.0.0.0/0"]
   target_tags   = ["webserver-tag"]
 }

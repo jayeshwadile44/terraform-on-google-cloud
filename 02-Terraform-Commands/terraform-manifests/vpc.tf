@@ -1,8 +1,7 @@
 # Terraform Provider Configuration: google
 provider "google" {
-  project = "darkfiber-terraform" #project ID
+  project = "gcplearn9"
   region = "us-central1"
-  zone   = "us-central1-a"
 }
 
 # Resource: VPC
